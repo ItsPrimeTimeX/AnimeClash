@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Defining Ui Library
 local Window = Rayfield:CreateWindow({
-    Name = "Anime Clash👊 -PRIME TIME", -- Game Name
+    Name = "Anime Energy Clash Simulator🔥 -PRIME TIME", -- Game Name
     LoadingTitle = "PRIME TIME",
     LoadingSubtitle = "Created By: Prime Time",
     ConfigurationSaving = {

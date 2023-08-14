@@ -1,0 +1,432 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+-- Defining Ui Library
+local Window = Rayfield:CreateWindow({
+    Name = "Punching Simulator👊 -PRIME TIME", -- Game Name
+    LoadingTitle = "PRIME TIME",
+    LoadingSubtitle = "Created By: Prime Time",
+    ConfigurationSaving = {
+       Enabled = false,
+       FolderName = nil,
+       FileName = "PrimeTime"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink",
+       RememberJoins = true
+    },
+    KeySystem = false,
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided",
+       FileName = "Key", 
+       SaveKey = true,
+       GrabKeyFromSite = false,
+       Key = {"Hello"} 
+    }
+ })
+--------------------------------------------------------------------
+ local MainTab = Window:CreateTab("Home🏠", nil) 
+ local MainSection = MainTab:CreateSection("Main")
+--------------------------------------------------------------------
+--Notification
+ Rayfield:Notify({
+    Title = "PRIME TIME",
+    Content = "DM me on discord if u need any other scripts made",
+    Duration = 5,
+    Image = nil,
+    Actions = { 
+       Ignore = {
+          Name = "Thanks!",
+          Callback = function()
+          print("The user tapped Okay!")
+       end
+    },
+ },
+ })
+----------------------------------------------------------------------------------------------------------------
+-- Script Start!                           -Script By PRIME TIME                                              --
+----------------------------------------------------------------------------------------------------------------
+ local isRunning = false
+ --------------------------------------------------
+ --                 Toggles                      --
+ --------------------------------------------------
+ local Toggle = MainTab:CreateToggle({
+    Name = "Auto Click",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        isRunning = Value
+
+        if isRunning then
+            while isRunning do
+                game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerClick"):FireServer()
+                wait()
+            end
+        end
+    end,
+})
+
+
+ local Toggle = MainTab:CreateToggle({
+     Name = "Auto Best Sword",
+     CurrentValue = false,
+     Flag = "Toggle2",
+     Callback = function(Value)
+         isRunning = Value 
+ 
+         if isRunning then
+             while isRunning do
+                local args = {[1] = "p1"}
+                game:GetService("ReplicatedStorage").Remote.Event.Skin:FindFirstChild("[C-S]TryEquipBestSkin"):FireServer(unpack(args))
+                 wait(5)
+             end
+         end
+     end,
+ })
+
+ local Toggle = MainTab:CreateToggle({
+    Name = "Auto Best Ki",
+    CurrentValue = false,
+    Flag = "Toggle3",
+    Callback = function(Value)
+        isRunning = Value 
+
+        if isRunning then
+            while isRunning do
+                local args = {[1] = "p2"}
+                game:GetService("ReplicatedStorage").Remote.Event.Skin:FindFirstChild("[C-S]TryEquipBestSkin"):FireServer(unpack(args))
+                wait(5)
+            end
+        end
+    end,
+})
+
+local Toggle = MainTab:CreateToggle({
+    Name = "Auto Rebirth",
+    CurrentValue = false,
+    Flag = "Toggle4",
+    Callback = function(Value)
+        isRunning = Value 
+
+        if isRunning then
+            while isRunning do
+                game:GetService("ReplicatedStorage").Remote.Event.Rebirth:FindFirstChild("[C-S]TryBuyRebirth"):FireServer()
+                wait(5)
+            end
+        end
+    end,
+})
+
+local Toggle = MainTab:CreateToggle({
+    Name = "Auto Spin",
+    CurrentValue = false,
+    Flag = "Toggle5",
+    Callback = function(Value)
+        isRunning = Value 
+
+        if isRunning then
+            while isRunning do
+            game:GetService("ReplicatedStorage").Remote.Function.Spin:FindFirstChild("[C-S]TrySpin"):InvokeServer()
+            end
+        end
+    end,
+})
+
+local WinTab = Window:CreateTab("Auto Wins🏆", nil)
+local WinSection = WinTab:CreateSection("Beat the NPC once first, then turn on auto")
+
+local Toggle = WinTab:CreateToggle({
+   Name = "Auto Win",
+   CurrentValue = false,
+   Flag = "Toggle6",
+   Callback = function(Value)
+       isRunning = Value 
+
+       if isRunning then
+           while isRunning do
+               local args = {[1] = true}
+               game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+               wait(5)
+           end
+       end
+   end,
+   })
+
+local EggTab = Window:CreateTab("Auto Eggs🥚", nil)
+local EggSection = EggTab:CreateSection("Egg Types")
+
+local Toggle = EggTab:CreateToggle({
+    Name = "5 Egg",
+    CurrentValue = false,
+    Flag = "Toggle7",
+    Callback = function(Value)
+        isRunning = Value 
+        if isRunning then
+            while isRunning do
+                local args = {
+                    [1] = "Egg1"}
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                wait()
+            end
+        end
+    end,
+    })
+
+    local Toggle = EggTab:CreateToggle({
+        Name = "25 Egg",
+        CurrentValue = false,
+        Flag = "Toggle8",
+        Callback = function(Value)
+            isRunning = Value 
+            if isRunning then
+                while isRunning do
+                    local args = {
+                        [1] = "Egg2"}
+                    game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                    wait()
+                end
+            end
+        end,
+        })
+
+        local Toggle = EggTab:CreateToggle({
+            Name = "125 Egg",
+            CurrentValue = false,
+            Flag = "Toggle9",
+            Callback = function(Value)
+                isRunning = Value 
+                if isRunning then
+                    while isRunning do
+                        local args = {
+                            [1] = "Egg3"}
+                        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                        wait()
+                    end
+                end
+            end,
+            })
+
+            local Toggle = EggTab:CreateToggle({
+                Name = "700 Egg",
+                CurrentValue = false,
+                Flag = "Toggle10",
+                Callback = function(Value)
+                    isRunning = Value 
+                    if isRunning then
+                        while isRunning do
+                            local args = {
+                                [1] = "Egg1"}
+                            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                            wait()
+                        end
+                    end
+                end,
+                })
+
+                local Toggle = EggTab:CreateToggle({
+                    Name = "7.5K Egg",
+                    CurrentValue = false,
+                    Flag = "Toggle11",
+                    Callback = function(Value)
+                        isRunning = Value 
+                        if isRunning then
+                            while isRunning do
+                                local args = {
+                                    [1] = "Egg5"}
+                                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                wait()
+                            end
+                        end
+                    end,
+                    })
+
+                    local Toggle = EggTab:CreateToggle({
+                        Name = "22.5K Egg",
+                        CurrentValue = false,
+                        Flag = "Toggle12",
+                        Callback = function(Value)
+                            isRunning = Value 
+                            if isRunning then
+                                while isRunning do
+                                    local args = {
+                                        [1] = "Egg6"}
+                                    game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                    wait()
+                                end
+                            end
+                        end,
+                        })
+
+                        local Toggle = EggTab:CreateToggle({
+                            Name = "75K Egg",
+                            CurrentValue = false,
+                            Flag = "Toggle13",
+                            Callback = function(Value)
+                                isRunning = Value 
+                                if isRunning then
+                                    while isRunning do
+                                        local args = {
+                                            [1] = "Egg7"}
+                                        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                        wait()
+                                    end
+                                end
+                            end,
+                            })
+
+                            local Toggle = EggTab:CreateToggle({
+                                Name = "225K Egg",
+                                CurrentValue = false,
+                                Flag = "Toggle14",
+                                Callback = function(Value)
+                                    isRunning = Value 
+                                    if isRunning then
+                                        while isRunning do
+                                            local args = {
+                                                [1] = "Egg8"}
+                                            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                            wait()
+                                        end
+                                    end
+                                end,
+                                })
+
+                                local Toggle = EggTab:CreateToggle({
+                                    Name = "650K Egg",
+                                    CurrentValue = false,
+                                    Flag = "Toggle15",
+                                    Callback = function(Value)
+                                        isRunning = Value 
+                                        if isRunning then
+                                            while isRunning do
+                                                local args = {
+                                                    [1] = "Egg9"}
+                                                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                wait()
+                                            end
+                                        end
+                                    end,
+                                    })
+
+                                    local Toggle = EggTab:CreateToggle({
+                                        Name = "2M Egg",
+                                        CurrentValue = false,
+                                        Flag = "Toggle16",
+                                        Callback = function(Value)
+                                            isRunning = Value 
+                                            if isRunning then
+                                                while isRunning do
+                                                    local args = {
+                                                        [1] = "Egg10"}
+                                                    game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                    wait()
+                                                end
+                                            end
+                                        end,
+                                        })
+
+                                        local Toggle = EggTab:CreateToggle({
+                                            Name = "Egg11",
+                                            CurrentValue = false,
+                                            Flag = "Toggle17",
+                                            Callback = function(Value)
+                                                isRunning = Value 
+                                                if isRunning then
+                                                    while isRunning do
+                                                        local args = {
+                                                            [1] = "Egg11"}
+                                                        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                        wait()
+                                                    end
+                                                end
+                                            end,
+                                            })
+
+                                            local Toggle = EggTab:CreateToggle({
+                                                Name = "Egg12",
+                                                CurrentValue = false,
+                                                Flag = "Toggle18",
+                                                Callback = function(Value)
+                                                    isRunning = Value 
+                                                    if isRunning then
+                                                        while isRunning do
+                                                            local args = {
+                                                                [1] = "Egg12"}
+                                                            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                            wait()
+                                                        end
+                                                    end
+                                                end,
+                                                })
+
+                                                local Toggle = EggTab:CreateToggle({
+                                                    Name = "Egg13",
+                                                    CurrentValue = false,
+                                                    Flag = "Toggle19",
+                                                    Callback = function(Value)
+                                                        isRunning = Value 
+                                                        if isRunning then
+                                                            while isRunning do
+                                                                local args = {
+                                                                    [1] = "Egg13"}
+                                                                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                                wait()
+                                                            end
+                                                        end
+                                                    end,
+                                                    })
+
+                                                    local Toggle = EggTab:CreateToggle({
+                                                        Name = "Egg14",
+                                                        CurrentValue = false,
+                                                        Flag = "Toggle20",
+                                                        Callback = function(Value)
+                                                            isRunning = Value 
+                                                            if isRunning then
+                                                                while isRunning do
+                                                                    local args = {
+                                                                        [1] = "Egg14"}
+                                                                    game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                                    wait()
+                                                                end
+                                                            end
+                                                        end,
+                                                        })
+
+                                                        local Toggle = EggTab:CreateToggle({
+                                                            Name = "Egg15",
+                                                            CurrentValue = false,
+                                                            Flag = "Toggle21",
+                                                            Callback = function(Value)
+                                                                isRunning = Value 
+                                                                if isRunning then
+                                                                    while isRunning do
+                                                                        local args = {
+                                                                            [1] = "Egg15"}
+                                                                        game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                                        wait()
+                                                                    end
+                                                                end
+                                                            end,
+                                                            })
+
+                                                            local Toggle = EggTab:CreateToggle({
+                                                                Name = "Egg16",
+                                                                CurrentValue = false,
+                                                                Flag = "Toggle22",
+                                                                Callback = function(Value)
+                                                                    isRunning = Value 
+                                                                    if isRunning then
+                                                                        while isRunning do
+                                                                            local args = {
+                                                                                [1] = "Egg16"}
+                                                                            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                                                                            wait()
+                                                                        end
+                                                                    end
+                                                                end,
+                                                                })
+-----------------------------------------------------------------
+--                         Buttons                             --
+-----------------------------------------------------------------
